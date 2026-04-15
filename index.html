@@ -34,7 +34,7 @@
       justify-content: space-between;
       height: 85vh;
       width: 100%;
-      padding: 0 50px;
+      padding: 0 40px;
       box-sizing: border-box;
       gap: 20px;
     }
@@ -47,12 +47,12 @@
       align-items: center;
       gap: 15px;
       height: 100%;
-      flex: 0 0 24%;
+      flex: 0 0 28%; /* slightly wider for bigger squares */
     }
 
     .side img {
-      width: 200px;
-      height: 45%;
+      width: 90%;
+      aspect-ratio: 1 / 1; /* makes them perfect squares */
       object-fit: cover;
       border-radius: 20px;
       box-shadow: 0 6px 15px rgba(0,0,0,0.15);
@@ -119,8 +119,8 @@
 
     <!-- LEFT SIDE IMAGES -->
     <div class="side">
-      <img src="https://via.placeholder.com/300x600" alt="left1">
-      <img src="https://via.placeholder.com/300x600" alt="left2">
+      <img src="https://via.placeholder.com/400" alt="left1">
+      <img src="https://via.placeholder.com/400" alt="left2">
     </div>
 
     <!-- CARD -->
@@ -140,8 +140,8 @@
 
     <!-- RIGHT SIDE IMAGES -->
     <div class="side">
-      <img src="https://via.placeholder.com/300x600" alt="right1">
-      <img src="https://via.placeholder.com/300x600" alt="right2">
+      <img src="https://via.placeholder.com/400" alt="right1">
+      <img src="https://via.placeholder.com/400" alt="right2">
     </div>
 
   </div>
