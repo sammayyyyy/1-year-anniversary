@@ -11,140 +11,182 @@
     body {
       margin: 0;
       height: 100vh;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
       align-items: center;
-      background: linear-gradient(135deg, #cce7ff, #e6f2ff);
+      background: linear-gradient(135deg, #dbeeff, #f4f9ff);
       font-family: 'Arial', sans-serif;
+    }
+
+    /* soft floating hearts background */
+    .hearts {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
       overflow: hidden;
+      z-index: 0;
+    }
+
+    .hearts span {
+      position: absolute;
+      bottom: -50px;
+      color: rgba(90, 140, 190, 0.25);
+      font-size: 20px;
+      animation: floatUp 10s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+      10% { opacity: 1; }
+      100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
     }
 
     h1 {
-      margin-top: 15px;
-      color: #3a6ea5;
-      font-weight: 600;
+      margin-top: 10px;
       font-family: 'Dancing Script', cursive;
-      font-size: 42px;
+      font-size: 44px;
+      color: #4f79a7;
+      z-index: 2;
     }
 
     .layout {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
+      gap: 25px;
       height: 85vh;
       width: 100%;
-      padding: 0 40px;
+      padding: 0 30px;
       box-sizing: border-box;
-      gap: 20px;
-    }
-
-    /* SIDE IMAGE COLUMNS */
-    .side {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 15px;
-      height: 100%;
-      flex: 0 0 28%; /* slightly wider for bigger squares */
-    }
-
-    .side img {
-      width: 90%;
-      aspect-ratio: 1 / 1; /* makes them perfect squares */
-      object-fit: cover;
-      border-radius: 20px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-    }
-
-    /* CARD */
-    .card-container {
-      perspective: 1000px;
-      height: 100%;
-      flex: 0 0 auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       z-index: 2;
     }
 
-    .card {
-      width: 260px;
+    /* scrapbook sides */
+    .side {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 30%;
+      align-items: center;
+    }
+
+    .photo {
+      width: 220px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 8px solid white;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      transform: rotate(var(--r));
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+
+    .photo::before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      width: 60px;
+      height: 20px;
+      background: rgba(255,255,255,0.6);
+      transform: rotate(-10deg);
+    }
+
+    .photo:hover {
+      transform: scale(1.08) rotate(0deg);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+    }
+
+    /* envelope card */
+    .card-wrapper {
+      perspective: 1200px;
+      width: 280px;
+      height: 420px;
+      position: relative;
+    }
+
+    .envelope {
+      width: 100%;
       height: 100%;
       position: relative;
       transform-style: preserve-3d;
-      transition: transform 0.8s;
+      transition: transform 1s ease;
       cursor: pointer;
-      transform-origin: center;
     }
 
-    .card:hover {
-      transform: rotateY(-180deg);
+    .card-wrapper:hover .envelope {
+      transform: rotateY(180deg);
     }
 
-    .card-face {
+    .front, .back {
       position: absolute;
       width: 100%;
       height: 100%;
       backface-visibility: hidden;
-      border-radius: 25px;
+      border-radius: 18px;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 30px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-      font-size: 18px;
+      padding: 25px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
     }
 
     .front {
-      background: white;
-      color: #3a6ea5;
+      background: #ffffff;
+      color: #4f79a7;
     }
 
     .back {
-      background: #3a6ea5;
+      background: #4f79a7;
       color: white;
-      transform: rotateY(-180deg);
+      transform: rotateY(180deg);
     }
 
   </style>
 </head>
 <body>
 
-  <h1>Happy 1 Year 💙</h1>
+<!-- floating hearts -->
+<div class="hearts">
+  <span style="left:10%">💙</span>
+  <span style="left:25%">💙</span>
+  <span style="left:40%">💙</span>
+  <span style="left:60%">💙</span>
+  <span style="left:80%">💙</span>
+</div>
 
-  <div class="layout">
+<h1>Happy 1 Year 💙</h1>
 
-    <!-- LEFT SIDE IMAGES -->
-    <div class="side">
-      <img src="https://via.placeholder.com/400" alt="left1">
-      <img src="https://via.placeholder.com/400" alt="left2">
-    </div>
+<div class="layout">
 
-    <!-- CARD -->
-    <div class="card-container">
-      <div class="card">
+  <!-- LEFT SCRAPBOOK -->
+  <div class="side">
+    <img class="photo" style="--r:-6deg" src="https://via.placeholder.com/400" />
+    <img class="photo" style="--r:4deg" src="https://via.placeholder.com/400" />
+  </div>
 
-        <div class="card-face front">
-          <p>Put your main message here 💌</p>
-        </div>
-
-        <div class="card-face back">
-          <p>Put your hidden message here 💖</p>
-        </div>
-
+  <!-- ENVELOPE CARD -->
+  <div class="card-wrapper">
+    <div class="envelope">
+      <div class="front">
+        <p>Put your main message here 💌</p>
+      </div>
+      <div class="back">
+        <p>Put your hidden message here 💖</p>
       </div>
     </div>
-
-    <!-- RIGHT SIDE IMAGES -->
-    <div class="side">
-      <img src="https://via.placeholder.com/400" alt="right1">
-      <img src="https://via.placeholder.com/400" alt="right2">
-    </div>
-
   </div>
+
+  <!-- RIGHT SCRAPBOOK -->
+  <div class="side">
+    <img class="photo" style="--r:5deg" src="https://via.placeholder.com/400" />
+    <img class="photo" style="--r:-5deg" src="https://via.placeholder.com/400" />
+  </div>
+
+</div>
 
 </body>
 </html>
