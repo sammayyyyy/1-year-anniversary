@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy 1 Year ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ffc0cb, #ffe4e1);
+      font-family: 'Arial', sans-serif;
+    }
+
+    .card-container {
+      perspective: 1000px;
+    }
+
+    .card {
+      width: 300px;
+      height: 200px;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.8s;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: rotateY(180deg);
+    }
+
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      font-size: 18px;
+    }
+
+    .front {
+      background: white;
+      color: #ff69b4;
+    }
+
+    .back {
+      background: #ff69b4;
+      color: white;
+      transform: rotateY(180deg);
+    }
+
+    h1 {
+      position: absolute;
+      top: 40px;
+      color: #ff69b4;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Happy 1 Year 💕</h1>
+
+  <div class="card-container">
+    <div class="card">
+      <div class="card-face front">
+        <p>Put your main message here 💌</p>
+      </div>
+      <div class="card-face back">
+        <p>Put your hidden message here 💖</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
