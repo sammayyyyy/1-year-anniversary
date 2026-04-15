@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy 1 Year ❤️</title>
+  <title>Happy 1 Year 💙</title>
   <style>
     body {
       margin: 0;
@@ -11,8 +11,15 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(135deg, #ffc0cb, #ffe4e1);
+      background: linear-gradient(135deg, #cce7ff, #e6f2ff);
       font-family: 'Arial', sans-serif;
+    }
+
+    h1 {
+      position: absolute;
+      top: 40px;
+      color: #3a6ea5;
+      font-weight: 600;
     }
 
     .card-container {
@@ -21,15 +28,16 @@
 
     .card {
       width: 300px;
-      height: 200px;
+      height: 400px; /* taller rectangle */
       position: relative;
       transform-style: preserve-3d;
       transition: transform 0.8s;
       cursor: pointer;
     }
 
+    /* flip vertically instead of sideways */
     .card:hover {
-      transform: rotateY(180deg);
+      transform: rotateX(180deg);
     }
 
     .card-face {
@@ -39,46 +47,83 @@
       backface-visibility: hidden;
       border-radius: 20px;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      justify-content: space-between;
       align-items: center;
       text-align: center;
       padding: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-      font-size: 18px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      font-size: 16px;
     }
 
     .front {
       background: white;
-      color: #ff69b4;
+      color: #3a6ea5;
     }
 
     .back {
-      background: #ff69b4;
+      background: #3a6ea5;
       color: white;
-      transform: rotateY(180deg);
+      transform: rotateX(180deg);
     }
 
-    h1 {
-      position: absolute;
-      top: 40px;
-      color: #ff69b4;
+    .images {
+      display: flex;
+      gap: 10px;
+    }
+
+    .images img {
+      width: 120px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    p {
+      margin: 10px 0;
     }
   </style>
 </head>
 <body>
 
-  <h1>Happy 1 Year 💕</h1>
+  <h1>Happy 1 Year 💙</h1>
 
   <div class="card-container">
     <div class="card">
+
+      <!-- FRONT -->
       <div class="card-face front">
+        <div class="images">
+          <img src="https://via.placeholder.com/120x90" alt="pic1">
+          <img src="https://via.placeholder.com/120x90" alt="pic2">
+        </div>
+
         <p>Put your main message here 💌</p>
+
+        <div class="images">
+          <img src="https://via.placeholder.com/120x90" alt="pic3">
+          <img src="https://via.placeholder.com/120x90" alt="pic4">
+        </div>
       </div>
+
+      <!-- BACK -->
       <div class="card-face back">
+        <div class="images">
+          <img src="https://via.placeholder.com/120x90" alt="pic5">
+          <img src="https://via.placeholder.com/120x90" alt="pic6">
+        </div>
+
         <p>Put your hidden message here 💖</p>
+
+        <div class="images">
+          <img src="https://via.placeholder.com/120x90" alt="pic7">
+          <img src="https://via.placeholder.com/120x90" alt="pic8">
+        </div>
       </div>
+
     </div>
   </div>
 
 </body>
 </html>
+
