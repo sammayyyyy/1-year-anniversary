@@ -13,6 +13,7 @@
       align-items: center;
       background: linear-gradient(135deg, #cce7ff, #e6f2ff);
       font-family: 'Arial', sans-serif;
+      overflow: hidden;
     }
 
     h1 {
@@ -25,23 +26,29 @@
     .layout {
       display: flex;
       align-items: center;
-      gap: 20px;
-      height: 80vh;
+      justify-content: center;
+      gap: 10px;
+      height: 85vh;
+      width: 100%;
+      padding: 0 10px;
     }
 
     /* SIDE IMAGE COLUMNS */
     .side {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
       height: 100%;
+      flex: 1;
     }
 
     .side img {
-      width: 150px;
-      height: 48%;
+      width: 100%;
+      height: 50%;
       object-fit: cover;
-      border-radius: 15px;
+      border-radius: 20px;
       box-shadow: 0 6px 15px rgba(0,0,0,0.15);
     }
 
@@ -49,18 +56,20 @@
     .card-container {
       perspective: 1000px;
       height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .card {
-      width: 320px;
-      height: 100%; /* fills most of screen */
+      width: 340px;
+      height: 100%;
       position: relative;
       transform-style: preserve-3d;
       transition: transform 0.8s;
       cursor: pointer;
     }
 
-    /* flip sideways OTHER way */
     .card:hover {
       transform: rotateY(-180deg);
     }
@@ -101,8 +110,8 @@
 
     <!-- LEFT SIDE IMAGES -->
     <div class="side">
-      <img src="https://via.placeholder.com/150x300" alt="left1">
-      <img src="https://via.placeholder.com/150x300" alt="left2">
+      <img src="https://via.placeholder.com/300x600" alt="left1">
+      <img src="https://via.placeholder.com/300x600" alt="left2">
     </div>
 
     <!-- CARD -->
@@ -122,8 +131,8 @@
 
     <!-- RIGHT SIDE IMAGES -->
     <div class="side">
-      <img src="https://via.placeholder.com/150x300" alt="right1">
-      <img src="https://via.placeholder.com/150x300" alt="right2">
+      <img src="https://via.placeholder.com/300x600" alt="right1">
+      <img src="https://via.placeholder.com/300x600" alt="right2">
     </div>
 
   </div>
