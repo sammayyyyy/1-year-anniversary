@@ -34,8 +34,9 @@
       justify-content: space-between;
       height: 85vh;
       width: 100%;
-      padding: 0 40px; /* more breathing room so no overlap */
+      padding: 0 50px;
       box-sizing: border-box;
+      gap: 20px;
     }
 
     /* SIDE IMAGE COLUMNS */
@@ -46,11 +47,11 @@
       align-items: center;
       gap: 15px;
       height: 100%;
-      flex: 0 0 22%; /* fixed space so card never overlaps */
+      flex: 0 0 24%;
     }
 
     .side img {
-      width: 180px; /* reduced to prevent collision */
+      width: 200px;
       height: 45%;
       object-fit: cover;
       border-radius: 20px;
@@ -65,11 +66,11 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      z-index: 2; /* keep above but not overlapping layout space */
+      z-index: 2;
     }
 
     .card {
-      width: 280px;
+      width: 260px;
       height: 100%;
       position: relative;
       transform-style: preserve-3d;
@@ -147,4 +148,3 @@
 
 </body>
 </html>
-
