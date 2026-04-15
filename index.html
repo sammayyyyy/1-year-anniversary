@@ -31,11 +31,11 @@
     .layout {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 10px;
+      justify-content: space-between;
       height: 85vh;
       width: 100%;
-      padding: 0 10px;
+      padding: 0 40px; /* more breathing room so no overlap */
+      box-sizing: border-box;
     }
 
     /* SIDE IMAGE COLUMNS */
@@ -44,14 +44,14 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 10px;
+      gap: 15px;
       height: 100%;
-      flex: 1;
+      flex: 0 0 22%; /* fixed space so card never overlaps */
     }
 
     .side img {
-      width: 100%;
-      height: 50%;
+      width: 180px; /* reduced to prevent collision */
+      height: 45%;
       object-fit: cover;
       border-radius: 20px;
       box-shadow: 0 6px 15px rgba(0,0,0,0.15);
@@ -61,18 +61,21 @@
     .card-container {
       perspective: 1000px;
       height: 100%;
+      flex: 0 0 auto;
       display: flex;
       justify-content: center;
       align-items: center;
+      z-index: 2; /* keep above but not overlapping layout space */
     }
 
     .card {
-      width: 280px; /* made thinner to prevent overlap */
+      width: 280px;
       height: 100%;
       position: relative;
       transform-style: preserve-3d;
       transition: transform 0.8s;
       cursor: pointer;
+      transform-origin: center;
     }
 
     .card:hover {
@@ -144,3 +147,4 @@
 
 </body>
 </html>
+
